@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <canvas id="canvas" width="200px" height="200px"></canvas>
+  <canvas id="react" width="200px" height="200px"></canvas>
+</body>
+<script>
+  ~function () {
+    let canvas = document.getElementById('canvas')
+    let ctx = canvas.getContext('2d')
+    let ratio = window.devicePixelRatio / (ctx.webkitBackingStoreRatio || 1)
+
+    canvas.style.width = canvas.width + 'px';
+    canvas.style.height = canvas.height + 'px'
+    canvas.width = canvas.width * ratio
+    canvas.height = canvas.height * ratio
+
+    //现在画布大小是400px*400px
+    ~function drowTriangle() {
+      ctx.beginPath()
+      ctx.moveTo(80, 80)
+      ctx.lineTo(200, 200)
+      ctx.lineTo(100, 180)
+      ctx.closePath()
+      ctx.fill()
+    }()
+
+    ~function drowArc() {
+      ctx.beginPath()
+      ctx.arc(300, 100, 50, 0, Math.PI * 2)
+      ctx.closePath()
+      ctx.stroke()
+    }()
+
+    ~function drowPop() {
+      ctx.beginPath()
+      ctx.moveTo(75, 225)
+      ctx.quadraticCurveTo(25, 225, 25, 262.5)
+      ctx.quadraticCurveTo(25, 300, 50, 300)
+      ctx.quadraticCurveTo(50, 320, 30, 325)
+      ctx.quadraticCurveTo(60, 320, 65, 300)
+      ctx.quadraticCurveTo(125, 300, 125, 262.5)
+      ctx.quadraticCurveTo(125, 225, 75, 225)
+      ctx.stroke()
+    }()
+
+    ~function drowHeart() {
+      ctx.beginPath()
+      ctx.moveTo(275, 240)
+      ctx.bezierCurveTo(275, 237, 270, 225, 250, 225)
+      ctx.bezierCurveTo(220, 225, 220, 262.5, 220, 262.5)
+      ctx.bezierCurveTo(220, 280, 240, 302, 275, 320)
+      ctx.bezierCurveTo(310, 302, 330, 280, 330, 262.5)
+      ctx.bezierCurveTo(330, 262.5, 330, 225, 300, 225)
+      ctx.bezierCurveTo(285, 225, 275, 237, 275, 240)
+      ctx.fill()
+    }()
+
+  }()
+
+  ~function(){
+    let canvas = document.getElementById('react')
+    let ctx = canvas.getContext('2d')
+    let ratio = window.devicePixelRatio / (ctx.webkitBackingStoreRatio || 1)
+
+    canvas.style.width = canvas.width + 'px';
+    canvas.style.height = canvas.height + 'px'
+    canvas.width = canvas.width * ratio
+    canvas.height = canvas.height * ratio
+
+    ~function drowRect(){
+      ctx.fillRect(0,0,100,100)
+      ctx.rect(200,200,100,100)
+      ctx.fill()
+      // ctx.stroke()
+    }()
+    
+  }()
+  
+</script>
+
+</html>
