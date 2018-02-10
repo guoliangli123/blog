@@ -33,7 +33,7 @@ getContext('webgl2')
 ```
 ###栅格 and 坐标空间
 栅格的起点为左上角（坐标为（0,0）)
-![坐标空间](https://github.com/lgl1993/blog/blob/master/assets/Canvas_default_grid.png)
+![坐标空间](https://github.com/lgl1993/blog/raw/master/assets/Canvas_default_grid.png)
 
 ###矩形
 x与y指定了在canvas画布上所绘制的矩形的左上角（相对于原点）的坐标。width和height设置矩形的尺寸。  
@@ -71,8 +71,9 @@ closePath()
 ```
 当我们在调用fill时会自动闭合路径，stroke不会闭合。  
 
-![图片1](https://github.com/lgl1993/blog/blob/master/assets/canvas1.png)
-![图片2](https://github.com/lgl1993/blog/blob/master/assets/canvas2.png)  
+<img src="https://github.com/lgl1993/blog/raw/master/assets/canvas1.png" width = "50%" />
+<img src="https://github.com/lgl1993/blog/raw/master/assets/canvas2.png" width = "50%" />
+
 
 第二张图片中，绘制圆形前没有使用beginpath的函数，因此stroke时会连起来。
 ####移动笔触
@@ -94,6 +95,6 @@ quadraticCurveTo(cp1x, cp1y, x, y)
 bezierCurveTo(cp1x, cp1y, cp2x, cp2y, x, y)
 绘制三次贝塞尔曲线，cp1x,cp1y为控制点一，cp2x,cp2y为控制点二，x,y为结束点。
 ```
-![图片描述](https://github.com/lgl1993/blog/blob/master/assets/Canvas_curves.png)
+![图片描述](https://github.com/lgl1993/blog/raw/master/assets/Canvas_curves.png)
 红色点为控制点，蓝色为起始点和终点。
 
