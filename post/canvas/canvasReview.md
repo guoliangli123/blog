@@ -1,5 +1,7 @@
 # canvas复习总结(一)
 
+[![](https://badge.juejin.im/entry/5a7eb22ef265da4e7f35965a/likes.svg?style=flat)](https://juejin.im/post/5a7eb204f265da4e8077abe6)
+
 最近一段时间一直在做echarts绘图方面的东西，对canvas非常感兴趣，但是原生的接口也忘得差不多了，在此总结整理下。
 
 ###width and height

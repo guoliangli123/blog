@@ -1,5 +1,7 @@
 # canvas复习总结(二)
 
+[![](https://badge.juejin.im/entry/5a7f0026f265da4e7910062f/likes.svg?style=flat)](https://juejin.im/post/5a7f0003f265da4e92682025)
+
 ## 绘制文本
 
 * fillText(text, x, y [, maxWidth])  
