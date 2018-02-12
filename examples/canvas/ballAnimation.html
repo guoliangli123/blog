@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <canvas width="400px" height="400px" id="canvas"></canvas>
+</body>
+
+<script>
+  let ctx = document.getElementById('canvas').getContext('2d')
+
+  class Ball {
+    constructor(ctx) {
+      this.ctx = ctx
+      this.radius = 20
+      this.x = 100
+      this.y = 100
+      this.vx = 5  //速度
+      this.vy = 2
+      this.ax = 0 //加速度
+      this.ay = 9
+      this.color = 'red'
+    }
+    draw() {
+      this.ctx.beginPath()
+      this.ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2)
+      this.ctx.closePath()
+      this.ctx.fillStyle = this.color
+      this.ctx.fill()
+    }
+  }
+
+  const getInstance = (() => {
+    let instance = null;
+    return () => instance ? instance : instance = new Ball(ctx);
+  })()
+
+  function clear() {
+    ctx.fillStyle = 'rgba(255,255,255,0.3)';
+    ctx.fillRect(0, 0, 400, 400)
+  }
+
+  function draw() {
+    clear()
+    let ball = getInstance();
+    ball.draw();
+    ball.x += ball.vx;
+    ball.y += ball.vy;
+    if (ball.y + ball.vy > canvas.height || ball.y + ball.vy < 0) {
+      ball.vy = -ball.vy;
+    }
+    if (ball.x + ball.vx > canvas.width || ball.x + ball.vx < 0) {
+      ball.vx = -ball.vx;
+    }
+    raf = window.requestAnimationFrame(draw);
+  }
+
+  window.requestAnimationFrame(draw);
+
+</script>
+
+</html>
